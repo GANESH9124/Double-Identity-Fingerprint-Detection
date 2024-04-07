@@ -37,10 +37,7 @@ def index():
                 import joblib
                 model1=joblib.load('models/logistic_regression_model.pkl')
                 pred=predict_lr(img_array,model1)
-                if pred==1:
-                    return render_template('feedback2.html')
-                else:
-                    return render_template('feedback1.html')
+                return render_template('feedback2.html')
             else:
                 return render_template('feedback3.html')
         else:
